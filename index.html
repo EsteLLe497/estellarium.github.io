@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hiro Nikaido Portfolio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="vn-shell" aria-label="二階堂ヒロ ポートフォリオ">
+      <section class="scene" id="top">
+        <div class="scene-bg" aria-hidden="true"></div>
+
+        <header class="topbar">
+          <a class="brand" href="#top" aria-label="トップへ">
+            <span class="brand-mark">HN</span>
+            <span>二階堂ヒロ</span>
+          </a>
+          <nav class="nav" aria-label="主要ナビゲーション">
+            <a href="#profile">Profile</a>
+            <a href="#stills">Stills</a>
+            <a href="#works">Works</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
+
+        <div class="stage">
+          <aside class="character-card" id="profile">
+            <div class="portrait-frame">
+              <img src="./assets/portrait.png" alt="立ち絵風のプロフィール写真" />
+            </div>
+            <div class="stats">
+              <p class="label">Character File</p>
+              <h1>二階堂ヒロ</h1>
+              <dl>
+                <div>
+                  <dt>Role</dt>
+                  <dd>Designer / Maker</dd>
+                </div>
+                <div>
+                  <dt>Style</dt>
+                  <dd>物語性のある画面設計</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd>新作制作中</dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+
+          <section class="dialogue" aria-labelledby="intro-title">
+            <div class="nameplate">Hiro Nikaido</div>
+            <h2 id="intro-title">趣味も作品も、ひとつのルートとして見せる。</h2>
+            <p>
+              ノベルゲームの会話画面みたいに、立ち絵、スチル、制作ログを並べたポートフォリオです。
+              写真や作品画像を差し替えるだけで、自分の世界観をそのまま公開できます。
+            </p>
+            <div class="choice-row" aria-label="セクション移動">
+              <a href="#stills">スチルを見る</a>
+              <a href="#works">作品を見る</a>
+              <a href="#contact">連絡する</a>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="content-band" id="stills">
+        <div class="section-heading">
+          <p class="label">Gallery Route</p>
+          <h2>趣味のスチル</h2>
+        </div>
+        <div class="still-grid">
+          <article class="still-card is-large">
+            <img src="./assets/still-camera.png" alt="カメラ趣味のスチル" />
+            <div>
+              <p class="tag">Photography</p>
+              <h3>休日の採光テスト</h3>
+              <p>街歩き、カフェ、夜景。気に入った構図を作品づくりの資料にも使っています。</p>
+            </div>
+          </article>
+          <article class="still-card">
+            <img src="./assets/still-desk.png" alt="制作机のスチル" />
+            <div>
+              <p class="tag">Setup</p>
+              <h3>作業机</h3>
+              <p>ラフ、資料、配色メモを行き来する場所。</p>
+            </div>
+          </article>
+          <article class="still-card">
+            <img src="./assets/still-night.png" alt="夜の散歩のスチル" />
+            <div>
+              <p class="tag">Mood</p>
+              <h3>夜の散歩</h3>
+              <p>背景、光、空気感のストック。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band works-band" id="works">
+        <div class="section-heading">
+          <p class="label">Production Route</p>
+          <h2>製作作品</h2>
+        </div>
+        <div class="work-list">
+          <article class="work-item">
+            <span class="chapter">01</span>
+            <div>
+              <h3>Visual Story UI Kit</h3>
+              <p>ノベルゲーム調の会話UI、選択肢、ログ画面をまとめたデザインキット。</p>
+            </div>
+            <a href="#contact" aria-label="Visual Story UI Kitについて問い合わせる">View</a>
+          </article>
+          <article class="work-item">
+            <span class="chapter">02</span>
+            <div>
+              <h3>Personal Illustration Archive</h3>
+              <p>趣味のイラスト、写真、短い制作コメントを章立てで見せるアーカイブ。</p>
+            </div>
+            <a href="#contact" aria-label="Personal Illustration Archiveについて問い合わせる">View</a>
+          </article>
+          <article class="work-item">
+            <span class="chapter">03</span>
+            <div>
+              <h3>Prototype Game Scene</h3>
+              <p>キャラクター表示、背景差し替え、簡易分岐を備えたWebプロトタイプ。</p>
+            </div>
+            <a href="#contact" aria-label="Prototype Game Sceneについて問い合わせる">View</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-panel" id="contact">
+        <div>
+          <p class="label">Save Point</p>
+          <h2>連絡先</h2>
+          <p>依頼、感想、コラボ相談などはこちらへ。</p>
+        </div>
+        <div class="contact-actions">
+          <a href="mailto:hiro@example.com">hiro@example.com</a>
+          <a href="https://example.com" target="_blank" rel="noreferrer">Portfolio Link</a>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
