@@ -227,8 +227,10 @@ main {
 }
 
 .character-portrait img {
-  max-height: 680px;
+  width: min(100%, 390px);
+  max-height: 720px;
   object-fit: contain;
+  object-position: center bottom;
   filter: drop-shadow(0 28px 26px rgba(0, 0, 0, 0.12));
 }
 
