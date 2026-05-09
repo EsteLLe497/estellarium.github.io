@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio Kinetic Site</title>
-    <link rel="stylesheet" href="./styles.css?v=kinetic-no-extra-sections" />
+    <link rel="stylesheet" href="./styles.css?v=kinetic-warks-gallery" />
   </head>
   <body>
     <nav class="global-nav" aria-label="サイト内ナビゲーション">
       <a href="#top">TOP</a>
-      <a href="#movie">MOVIE</a>
-      <a href="#story">STORY</a>
       <a href="#character">CHARACTER</a>
-      <a href="#gallery">GALLERY</a>
+      <a href="#story">STORY</a>
+      <a href="#gallery">GALLALY</a>
+      <a href="#works">WARKS</a>
     </nav>
 
     <main id="top">
@@ -25,8 +25,8 @@
           <h1>STELLA<br />PORTFOLIO</h1>
           <p class="catch">終わりの先へ、作品を運ぶ。</p>
           <p class="lead">
-            ノベルゲームの公式サイト調に、ニュース、ムービー、ストーリー、キャラクター、
-            ギャラリー、仕様表まで一気通貫で見せる仮組みLPです。
+            立ち絵、物語、スチル、制作作品だけを見せる仮組みLPです。
+            画像や動画はあとから差し替えられるよう、すべて仮素材で置いています。
           </p>
         </div>
         <div class="key-visual">
@@ -34,20 +34,24 @@
         </div>
       </section>
 
-      <section class="panel" id="movie">
+      <section class="panel" id="character">
         <header class="section-title">
           <p>Stella of Portfolio</p>
-          <h2>MOVIE</h2>
+          <h2>CHARACTER</h2>
         </header>
-        <div class="movie-grid">
-          <a class="movie-card" href="#movie" aria-label="オープニングムービー仮枠">
-            <img src="./assets/movie-placeholder.png" alt="ムービー仮サムネイル" />
-            <strong>オープニングムービー</strong>
-          </a>
-          <a class="movie-card" href="#movie" aria-label="紹介ムービー仮枠">
-            <img src="./assets/movie-placeholder.png" alt="ムービー仮サムネイル" />
-            <strong>キャラクター紹介ムービー</strong>
-          </a>
+        <div class="character-layout">
+          <div class="character-portrait">
+            <img src="./assets/character-placeholder.png" alt="キャラクター立ち絵仮画像" />
+          </div>
+          <div class="character-copy">
+            <p class="quote">「まだ見せていない作品があるんだ」</p>
+            <p class="role">記録を運ぶポートフォリオ管理人</p>
+            <dl>
+              <div><dt>Name</dt><dd>Hiro</dd></div>
+              <div><dt>Role</dt><dd>Portfolio Guide</dd></div>
+              <div><dt>Profile</dt><dd>写真、制作物、短い物語を章立てで整理する案内役。</dd></div>
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -69,31 +73,10 @@
         </div>
       </section>
 
-      <section class="panel" id="character">
-        <header class="section-title">
-          <p>Stella of Portfolio</p>
-          <h2>CHARACTER</h2>
-        </header>
-        <div class="character-layout">
-          <div class="character-portrait">
-            <img src="./assets/character-placeholder.png" alt="キャラクター立ち絵仮画像" />
-          </div>
-          <div class="character-copy">
-            <p class="quote">「まだ見せていない作品があるんだ」</p>
-            <p class="role">記録を運ぶポートフォリオ管理人</p>
-            <dl>
-              <div><dt>Name</dt><dd>Hiro</dd></div>
-              <div><dt>CV</dt><dd>Temporary Voice</dd></div>
-              <div><dt>Profile</dt><dd>写真、制作物、短い物語を章立てで整理する案内役。</dd></div>
-            </dl>
-          </div>
-        </div>
-      </section>
-
       <section class="panel" id="gallery">
         <header class="section-title">
           <p>Stella of Portfolio</p>
-          <h2>GALLERY</h2>
+          <h2>GALLALY</h2>
         </header>
         <div class="gallery-grid">
           <figure><img src="./assets/gallery-01.png" alt="ギャラリー仮画像1" /><figcaption>Scene 01</figcaption></figure>
@@ -103,6 +86,38 @@
         </div>
       </section>
 
+      <section class="panel" id="works">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>WARKS</h2>
+        </header>
+        <div class="works-grid">
+          <article class="work-card">
+            <img src="./assets/gallery-03.png" alt="制作作品仮画像1" />
+            <div>
+              <p>Work 01</p>
+              <h3>Visual Novel Layout</h3>
+              <span>公式サイト風の縦長LPデザイン。</span>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="./assets/gallery-01.png" alt="制作作品仮画像2" />
+            <div>
+              <p>Work 02</p>
+              <h3>Still Gallery</h3>
+              <span>趣味の写真やスチルを並べるギャラリー。</span>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="./assets/gallery-02.png" alt="制作作品仮画像3" />
+            <div>
+              <p>Work 03</p>
+              <h3>Character Page</h3>
+              <span>立ち絵とプロフィールを見せる紹介ページ。</span>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
     <script src="./script.js"></script>
   </body>

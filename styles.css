@@ -166,30 +166,48 @@ main {
   font-size: clamp(4.2rem, 10vw, 8.4rem);
 }
 
-.movie-grid,
+.works-grid,
 .gallery-grid {
   display: grid;
   gap: 22px;
 }
 
-.movie-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.works-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.movie-card {
+.work-card {
   display: grid;
-  gap: 12px;
+  border: 1px solid var(--thin);
+  background: rgba(255, 255, 255, 0.34);
 }
 
-.movie-card img {
+.work-card img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border: 1px solid var(--thin);
 }
 
-.movie-card strong {
+.work-card div {
+  padding: 18px;
+}
+
+.work-card p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+}
+
+.work-card h3 {
+  margin: 0 0 10px;
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.work-card span {
+  display: block;
+  line-height: 1.8;
 }
 
 .story {
@@ -273,7 +291,7 @@ figcaption {
 
   .hero,
   .character-layout,
-  .movie-grid {
+  .works-grid {
     grid-template-columns: 1fr;
   }
 
