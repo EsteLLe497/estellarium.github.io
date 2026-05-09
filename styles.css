@@ -67,7 +67,7 @@ main {
 .hero {
   min-height: 760px;
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   align-items: center;
   gap: 46px;
   padding-top: 110px;
@@ -95,7 +95,7 @@ main {
 }
 
 .hero h1 {
-  font-size: clamp(4.2rem, 13vw, 10.5rem);
+  font-size: clamp(3.8rem, 8.6vw, 7.2rem);
 }
 
 .catch {
