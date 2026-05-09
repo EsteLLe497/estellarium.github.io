@@ -3,143 +3,185 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hiro Nikaido Portfolio</title>
+    <title>Portfolio Kinetic Site</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="vn-shell" aria-label="二階堂ヒロ ポートフォリオ">
-      <section class="scene" id="top">
-        <div class="scene-bg" aria-hidden="true"></div>
+    <nav class="global-nav" aria-label="サイト内ナビゲーション">
+      <a href="#top">TOP</a>
+      <a href="#news">NEWS</a>
+      <a href="#movie">MOVIE</a>
+      <a href="#story">STORY</a>
+      <a href="#character">CHARACTER</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#download">DOWNLOAD</a>
+      <a href="#shopping">SHOPPING GUIDE</a>
+      <a href="#spec">SPEC</a>
+    </nav>
 
-        <header class="topbar">
-          <a class="brand" href="#top" aria-label="トップへ">
-            <span class="brand-mark">HN</span>
-            <span>二階堂ヒロ</span>
-          </a>
-          <nav class="nav" aria-label="主要ナビゲーション">
-            <a href="#profile">Profile</a>
-            <a href="#stills">Stills</a>
-            <a href="#works">Works</a>
-            <a href="#contact">Contact</a>
-          </nav>
+    <main id="top">
+      <section class="hero panel">
+        <div class="shards" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="hero-copy">
+          <p class="series">Kinetic Portfolio Project</p>
+          <h1>STELLA<br />PORTFOLIO</h1>
+          <p class="catch">終わりの先へ、作品を運ぶ。</p>
+          <p class="lead">
+            ノベルゲームの公式サイト調に、ニュース、ムービー、ストーリー、キャラクター、
+            ギャラリー、仕様表まで一気通貫で見せる仮組みLPです。
+          </p>
+        </div>
+        <div class="key-visual">
+          <img src="./assets/hero-placeholder.png" alt="キービジュアル仮画像" />
+        </div>
+      </section>
+
+      <section class="panel" id="news">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>NEWS</h2>
         </header>
-
-        <div class="stage">
-          <aside class="character-card" id="profile">
-            <div class="portrait-frame">
-              <img src="./assets/portrait.png" alt="立ち絵風のプロフィール写真" />
-            </div>
-            <div class="stats">
-              <p class="label">Character File</p>
-              <h1>二階堂ヒロ</h1>
-              <dl>
-                <div>
-                  <dt>Role</dt>
-                  <dd>Designer / Maker</dd>
-                </div>
-                <div>
-                  <dt>Style</dt>
-                  <dd>物語性のある画面設計</dd>
-                </div>
-                <div>
-                  <dt>Status</dt>
-                  <dd>新作制作中</dd>
-                </div>
-              </dl>
-            </div>
-          </aside>
-
-          <section class="dialogue" aria-labelledby="intro-title">
-            <div class="nameplate">Hiro Nikaido</div>
-            <h2 id="intro-title">趣味も作品も、ひとつのルートとして見せる。</h2>
-            <p>
-              ノベルゲームの会話画面みたいに、立ち絵、スチル、制作ログを並べたポートフォリオです。
-              写真や作品画像を差し替えるだけで、自分の世界観をそのまま公開できます。
-            </p>
-            <div class="choice-row" aria-label="セクション移動">
-              <a href="#stills">スチルを見る</a>
-              <a href="#works">作品を見る</a>
-              <a href="#contact">連絡する</a>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="content-band" id="stills">
-        <div class="section-heading">
-          <p class="label">Gallery Route</p>
-          <h2>趣味のスチル</h2>
-        </div>
-        <div class="still-grid">
-          <article class="still-card is-large">
-            <img src="./assets/still-camera.png" alt="カメラ趣味のスチル" />
-            <div>
-              <p class="tag">Photography</p>
-              <h3>休日の採光テスト</h3>
-              <p>街歩き、カフェ、夜景。気に入った構図を作品づくりの資料にも使っています。</p>
-            </div>
+        <div class="news-list">
+          <article>
+            <time>2026.05.09</time>
+            <span>news</span>
+            <a href="#download">ポートフォリオサイト 仮公開</a>
           </article>
-          <article class="still-card">
-            <img src="./assets/still-desk.png" alt="制作机のスチル" />
-            <div>
-              <p class="tag">Setup</p>
-              <h3>作業机</h3>
-              <p>ラフ、資料、配色メモを行き来する場所。</p>
-            </div>
+          <article>
+            <time>2026.05.09</time>
+            <span>news</span>
+            <a href="#gallery">ギャラリー仮素材を追加</a>
           </article>
-          <article class="still-card">
-            <img src="./assets/still-night.png" alt="夜の散歩のスチル" />
-            <div>
-              <p class="tag">Mood</p>
-              <h3>夜の散歩</h3>
-              <p>背景、光、空気感のストック。</p>
-            </div>
+          <article>
+            <time>2026.05.09</time>
+            <span>news</span>
+            <a href="#movie">ティザームービー枠を設置</a>
           </article>
         </div>
       </section>
 
-      <section class="content-band works-band" id="works">
-        <div class="section-heading">
-          <p class="label">Production Route</p>
-          <h2>製作作品</h2>
-        </div>
-        <div class="work-list">
-          <article class="work-item">
-            <span class="chapter">01</span>
-            <div>
-              <h3>Visual Story UI Kit</h3>
-              <p>ノベルゲーム調の会話UI、選択肢、ログ画面をまとめたデザインキット。</p>
-            </div>
-            <a href="#contact" aria-label="Visual Story UI Kitについて問い合わせる">View</a>
-          </article>
-          <article class="work-item">
-            <span class="chapter">02</span>
-            <div>
-              <h3>Personal Illustration Archive</h3>
-              <p>趣味のイラスト、写真、短い制作コメントを章立てで見せるアーカイブ。</p>
-            </div>
-            <a href="#contact" aria-label="Personal Illustration Archiveについて問い合わせる">View</a>
-          </article>
-          <article class="work-item">
-            <span class="chapter">03</span>
-            <div>
-              <h3>Prototype Game Scene</h3>
-              <p>キャラクター表示、背景差し替え、簡易分岐を備えたWebプロトタイプ。</p>
-            </div>
-            <a href="#contact" aria-label="Prototype Game Sceneについて問い合わせる">View</a>
-          </article>
+      <section class="panel" id="movie">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>MOVIE</h2>
+        </header>
+        <div class="movie-grid">
+          <a class="movie-card" href="#movie" aria-label="オープニングムービー仮枠">
+            <img src="./assets/movie-placeholder.png" alt="ムービー仮サムネイル" />
+            <strong>オープニングムービー</strong>
+          </a>
+          <a class="movie-card" href="#movie" aria-label="紹介ムービー仮枠">
+            <img src="./assets/movie-placeholder.png" alt="ムービー仮サムネイル" />
+            <strong>キャラクター紹介ムービー</strong>
+          </a>
         </div>
       </section>
 
-      <section class="contact-panel" id="contact">
-        <div>
-          <p class="label">Save Point</p>
-          <h2>連絡先</h2>
-          <p>依頼、感想、コラボ相談などはこちらへ。</p>
+      <section class="story panel" id="story">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>STORY</h2>
+        </header>
+        <div class="story-text">
+          <p>古い街の光が、まだ空の底で瞬いている。</p>
+          <p>
+            記録を運ぶ者は、壊れかけた端末と一枚の写真を抱え、
+            作品の断片が眠る場所へ向かう。
+          </p>
+          <p>
+            旅の途中で出会うのは、まだ名前のないスチル、書きかけの物語、
+            そして次に作るべきものの予感だった。
+          </p>
         </div>
-        <div class="contact-actions">
-          <a href="mailto:hiro@example.com">hiro@example.com</a>
-          <a href="https://example.com" target="_blank" rel="noreferrer">Portfolio Link</a>
+      </section>
+
+      <section class="panel" id="character">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>CHARACTER</h2>
+        </header>
+        <div class="character-layout">
+          <div class="character-portrait">
+            <img src="./assets/character-placeholder.png" alt="キャラクター立ち絵仮画像" />
+          </div>
+          <div class="character-copy">
+            <p class="quote">「まだ見せていない作品があるんだ」</p>
+            <p class="role">記録を運ぶポートフォリオ管理人</p>
+            <dl>
+              <div><dt>Name</dt><dd>Hiro</dd></div>
+              <div><dt>CV</dt><dd>Temporary Voice</dd></div>
+              <div><dt>Profile</dt><dd>写真、制作物、短い物語を章立てで整理する案内役。</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="gallery">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>GALLERY</h2>
+        </header>
+        <div class="gallery-grid">
+          <figure><img src="./assets/gallery-01.png" alt="ギャラリー仮画像1" /><figcaption>Scene 01</figcaption></figure>
+          <figure><img src="./assets/gallery-02.png" alt="ギャラリー仮画像2" /><figcaption>Scene 02</figcaption></figure>
+          <figure><img src="./assets/gallery-03.png" alt="ギャラリー仮画像3" /><figcaption>Scene 03</figcaption></figure>
+          <figure><img src="./assets/gallery-04.png" alt="ギャラリー仮画像4" /><figcaption>Scene 04</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="panel" id="download">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>DOWNLOAD</h2>
+        </header>
+        <div class="download-row">
+          <a href="./assets/gallery-01.png" download>Wallpaper 1920 x 1080</a>
+          <a href="./assets/gallery-02.png" download>Banner 1200 x 630</a>
+        </div>
+      </section>
+
+      <section class="panel" id="shopping">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>SHOPPING GUIDE</h2>
+        </header>
+        <div class="guide-grid">
+          <article><h3>Digital</h3><p>作品ページ、SNS、動画リンクなどへの導線を配置できます。</p></article>
+          <article><h3>Commission</h3><p>依頼受付、価格表、納期、連絡先をここに整理できます。</p></article>
+          <article><h3>Archive</h3><p>過去作品、制作ログ、素材配布への入口として使えます。</p></article>
+        </div>
+      </section>
+
+      <section class="spec panel" id="spec">
+        <header class="section-title">
+          <p>Stella of Portfolio</p>
+          <h2>SPEC</h2>
+        </header>
+        <div class="spec-columns">
+          <table>
+            <caption>STAFF</caption>
+            <tbody>
+              <tr><th>ブランド</th><td>Portfolio</td></tr>
+              <tr><th>ジャンル</th><td>キネティック ポートフォリオ</td></tr>
+              <tr><th>公開日</th><td>2026.05.09</td></tr>
+              <tr><th>対象</th><td>全年齢</td></tr>
+              <tr><th>シナリオ</th><td>Draft</td></tr>
+              <tr><th>イラスト</th><td>Placeholder</td></tr>
+            </tbody>
+          </table>
+          <table>
+            <caption>SYSTEM</caption>
+            <tbody>
+              <tr><th>対応OS</th><td>Modern Browser</td></tr>
+              <tr><th>CPU</th><td>Any current device</td></tr>
+              <tr><th>メモリ</th><td>2GB以上推奨</td></tr>
+              <tr><th>HDD</th><td>約2MB</td></tr>
+              <tr><th>画面解像度</th><td>1280 x 720以上推奨</td></tr>
+              <tr><th>その他</th><td>画像・動画は仮埋め込み</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
