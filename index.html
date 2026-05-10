@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio Kinetic Site</title>
-    <link rel="stylesheet" href="./styles.css?v=kinetic-warks-gallery" />
+    <link rel="stylesheet" href="./styles.css?v=work-gamma" />
   </head>
   <body>
     <nav class="global-nav" aria-label="サイト内ナビゲーション">
@@ -12,7 +12,7 @@
       <a href="#character">CHARACTER</a>
       <a href="#story">STORY</a>
       <a href="#gallery">HOBBY</a>
-      <a href="#works">WARKS</a>
+      <a href="#works">WORK</a>
     </nav>
 
     <main id="top">
@@ -89,17 +89,17 @@
       <section class="panel" id="works">
         <header class="section-title">
           <p>Stella of Portfolio</p>
-          <h2>WARKS</h2>
+          <h2>WORK</h2>
         </header>
         <div class="works-grid">
-          <article class="work-card">
-            <img src="./assets/gallery-03.png" alt="制作作品仮画像1" />
+          <button class="work-card work-card-button" type="button" data-work-open="gamma">
+            <img src="./assets/work-gamma/gamma-1.webp" alt="GAMMAの制作画面" />
             <div>
               <p>Work 01</p>
-              <h3>Visual Novel Layout</h3>
-              <span>公式サイト風の縦長LPデザイン。</span>
+              <h3>GAMMA</h3>
+              <span>二年次のチーム制作作品。</span>
             </div>
-          </article>
+          </button>
           <article class="work-card">
             <img src="./assets/gallery-01.png" alt="制作作品仮画像2" />
             <div>
@@ -119,6 +119,39 @@
         </div>
       </section>
     </main>
-    <script src="./script.js"></script>
+
+    <div class="work-modal" id="gamma-modal" aria-hidden="true">
+      <div class="work-modal-backdrop" data-work-close></div>
+      <section class="work-modal-panel" role="dialog" aria-modal="true" aria-labelledby="gamma-title">
+        <button class="modal-close" type="button" data-work-close aria-label="閉じる">×</button>
+        <div class="work-viewer">
+          <button class="viewer-arrow viewer-arrow-left" type="button" data-slide-prev aria-label="前のメディア">‹</button>
+          <div class="viewer-stage" data-slide-stage>
+            <video class="work-slide is-active" src="./assets/work-gamma/gamma-demo.mp4" controls playsinline preload="metadata"></video>
+            <img class="work-slide" src="./assets/work-gamma/gamma-1.webp" alt="GAMMA スクリーンショット 1" />
+            <img class="work-slide" src="./assets/work-gamma/gamma-2.webp" alt="GAMMA スクリーンショット 2" />
+            <img class="work-slide" src="./assets/work-gamma/gamma-3.webp" alt="GAMMA スクリーンショット 3" />
+            <img class="work-slide" src="./assets/work-gamma/gamma-4.webp" alt="GAMMA スクリーンショット 4" />
+          </div>
+          <button class="viewer-arrow viewer-arrow-right" type="button" data-slide-next aria-label="次のメディア">›</button>
+        </div>
+        <div class="work-detail">
+          <p class="work-index">Work 01</p>
+          <h3 id="gamma-title">GAMMA</h3>
+          <p>二年次のチーム制作作品。</p>
+          <dl>
+            <div><dt>制作期間</dt><dd>4か月</dd></div>
+            <div><dt>制作環境</dt><dd>DirectX11</dd></div>
+            <div><dt>制作人数</dt><dd>11人</dd></div>
+          </dl>
+          <p>
+            初めてのチーム制作作品として、リーダー兼PMを担当しました。
+            チーム全体の進行管理やタスク調整を行いながら、プログラム面ではXAudioを用いたサウンドシステムの実装や、Assimpを使用した3Dモデル・モーション読み込み機能の実装を担当しました。
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="./script.js?v=work-gamma"></script>
   </body>
 </html>
