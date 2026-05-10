@@ -5,6 +5,7 @@
   --muted: #767676;
   --blue: #7fa9b8;
   --ice: #dfe9eb;
+  --scroll-shift: 0px;
 }
 
 * {
@@ -16,6 +17,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   color: var(--ink);
   background:
@@ -28,6 +30,20 @@ body {
 
 body.modal-open {
   overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(115deg, transparent 0 28%, rgba(255, 255, 255, 0.48) 38%, transparent 52%),
+    linear-gradient(180deg, rgba(127, 169, 184, 0.12), transparent 38%, rgba(17, 17, 17, 0.035));
+  background-size: 180% 100%, 100% 100%;
+  opacity: 0.72;
+  animation: ambient-sweep 18s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 a {
@@ -57,6 +73,31 @@ img {
   overflow-x: auto;
 }
 
+.global-nav a {
+  position: relative;
+  transition: color 360ms ease, opacity 360ms ease;
+}
+
+.global-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0.26em;
+  bottom: -8px;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: currentColor;
+  opacity: 0.62;
+  transition: transform 420ms ease;
+}
+
+.global-nav a.is-active::after,
+.global-nav a:hover::after,
+.global-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
 main {
   overflow: hidden;
 }
@@ -80,6 +121,10 @@ main {
 .hero-copy {
   position: relative;
   z-index: 2;
+}
+
+.page-ready .hero-copy {
+  animation: title-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .series,
@@ -129,6 +174,8 @@ main {
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 30px 32px rgba(0, 0, 0, 0.16));
+  transform: translate3d(0, calc(var(--scroll-shift) * -0.18), 0);
+  transition: transform 180ms ease-out;
 }
 
 .shards span,
@@ -147,6 +194,16 @@ main {
 .shards span:nth-child(3) { width: 36px; height: 96px; left: 16%; bottom: 12%; }
 .shards span:nth-child(4) { width: 112px; height: 24px; right: -3%; bottom: 20%; }
 .shards span:nth-child(5) { width: 54px; height: 54px; left: 52%; top: 52%; }
+
+.page-ready .shards span {
+  animation: shard-float 7s ease-in-out infinite alternate;
+}
+
+.page-ready .shards span:nth-child(2),
+.page-ready .shards span:nth-child(4) {
+  animation-duration: 9s;
+  animation-direction: alternate-reverse;
+}
 
 .panel::before {
   width: 86px;
@@ -184,6 +241,7 @@ main {
   display: grid;
   border: 1px solid var(--thin);
   background: rgba(255, 255, 255, 0.34);
+  transition: transform 420ms ease, border-color 420ms ease, background 420ms ease, box-shadow 420ms ease;
 }
 
 .work-card-button {
@@ -197,8 +255,10 @@ main {
 
 .work-card-button:hover,
 .work-card-button:focus-visible {
+  transform: translateY(-6px);
   border-color: rgba(17, 17, 17, 0.72);
   background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 18px 36px rgba(17, 17, 17, 0.12);
   outline: none;
 }
 
@@ -241,6 +301,14 @@ main {
 .work-modal.is-open {
   display: grid;
   place-items: center;
+}
+
+.work-modal.is-open .work-modal-backdrop {
+  animation: fade-in 220ms ease both;
+}
+
+.work-modal.is-open .work-modal-panel {
+  animation: modal-rise 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .work-modal-backdrop {
@@ -539,6 +607,8 @@ main {
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 28px 26px rgba(0, 0, 0, 0.12));
+  transform: translate3d(0, calc(var(--scroll-shift) * -0.08), 0);
+  transition: transform 180ms ease-out;
 }
 
 .quote {
@@ -584,6 +654,12 @@ figure img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 1px solid var(--thin);
+  transition: filter 420ms ease, transform 420ms ease;
+}
+
+figure:hover img {
+  filter: saturate(1.08) contrast(1.04);
+  transform: translateY(-4px);
 }
 
 figcaption {
@@ -591,6 +667,93 @@ figcaption {
   color: var(--muted);
   font-size: 0.86rem;
   letter-spacing: 0.08em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  filter: blur(8px);
+  transition:
+    opacity 760ms ease,
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 760ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+.work-card.reveal.is-visible:hover,
+.work-card-button.reveal.is-visible:focus-visible {
+  transform: translateY(-6px);
+}
+
+@keyframes title-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes ambient-sweep {
+  from {
+    background-position: 0% 0, 0 0;
+  }
+  to {
+    background-position: 100% 0, 0 0;
+  }
+}
+
+@keyframes shard-float {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(12px, -18px, 0) rotate(7deg);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
 
 @media (max-width: 860px) {
