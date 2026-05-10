@@ -31,7 +31,9 @@ revealTargets.forEach((target, index) => {
 
 const revealObserver = new IntersectionObserver((entries) => {
   for (const entry of entries) {
-    entry.target.classList.toggle("is-visible", entry.isIntersecting);
+    if (!entry.isIntersecting) continue;
+    entry.target.classList.add("is-visible");
+    revealObserver.unobserve(entry.target);
   }
 }, {
   rootMargin: "-8% 0px -12%",
