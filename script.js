@@ -77,36 +77,36 @@ window.addEventListener("scroll", () => {
 updateScrollMotion();
 
 const hobbyOpenButtons = document.querySelectorAll("[data-hobby-open]");
-const fishingModal = document.querySelector("#fishing-modal");
+const hobbyModals = [...document.querySelectorAll("#fishing-modal, #travel-modal")];
 
-if (fishingModal) {
-  const closeButtons = fishingModal.querySelectorAll("[data-hobby-close]");
+const closeHobbyModals = () => {
+  for (const modal of hobbyModals) {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+  }
+  document.body.classList.remove("modal-open");
+};
 
-  const openFishingModal = () => {
-    fishingModal.classList.add("is-open");
-    fishingModal.setAttribute("aria-hidden", "false");
+for (const button of hobbyOpenButtons) {
+  button.addEventListener("click", () => {
+    const modal = document.querySelector(`#${button.dataset.hobbyOpen}-modal`);
+    if (!modal) return;
+    closeHobbyModals();
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
-  };
-
-  const closeFishingModal = () => {
-    fishingModal.classList.remove("is-open");
-    fishingModal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-  };
-
-  for (const button of hobbyOpenButtons) {
-    button.addEventListener("click", openFishingModal);
-  }
-
-  for (const button of closeButtons) {
-    button.addEventListener("click", closeFishingModal);
-  }
-
-  document.addEventListener("keydown", (event) => {
-    if (!fishingModal.classList.contains("is-open")) return;
-    if (event.key === "Escape") closeFishingModal();
   });
 }
+
+for (const button of document.querySelectorAll("[data-hobby-close]")) {
+  button.addEventListener("click", closeHobbyModals);
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (!hobbyModals.some((modal) => modal.classList.contains("is-open"))) return;
+  closeHobbyModals();
+});
 
 const workOpenButtons = document.querySelectorAll("[data-work-open]");
 const workModal = document.querySelector("#gamma-modal");

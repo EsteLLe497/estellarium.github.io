@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio Kinetic Site</title>
-    <link rel="stylesheet" href="./styles.css?v=fishing-modal" />
+    <link rel="stylesheet" href="./styles.css?v=travel-modal" />
   </head>
   <body>
     <nav class="global-nav" aria-label="サイト内ナビゲーション">
@@ -157,7 +157,10 @@
             <span class="hobby-caption">釣り</span>
           </button>
           <figure><img src="./assets/hobby-nazotoki.jpg" alt="謎解きの写真" /><figcaption>謎解き</figcaption></figure>
-          <figure><img src="./assets/hobby-travel.png" alt="旅行の写真" /><figcaption>旅行</figcaption></figure>
+          <button class="hobby-card" type="button" data-hobby-open="travel">
+            <span class="hobby-frame"><img src="./assets/hobby-travel.png" alt="旅行の写真" /></span>
+            <span class="hobby-caption">旅行</span>
+          </button>
           <figure><img src="./assets/hobby-sports.png" alt="スポーツの写真" /><figcaption>スポーツ</figcaption></figure>
         </div>
       </section>
@@ -256,6 +259,39 @@
       </section>
     </div>
 
-    <script src="./script.js?v=fishing-modal"></script>
+    <div class="work-modal" id="travel-modal" aria-hidden="true">
+      <div class="work-modal-backdrop" data-hobby-close></div>
+      <section class="work-modal-panel hobby-modal-panel travel-modal-panel" role="dialog" aria-modal="true" aria-labelledby="travel-title">
+        <button class="modal-close" type="button" data-hobby-close aria-label="閉じる">×</button>
+        <div class="hobby-photo-grid travel-photo-grid">
+          <figure>
+            <img src="./assets/hobby-travel-itsukushima.jpg" alt="厳島神社の大鳥居の写真" />
+            <figcaption>Itsukushima Shrine</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/hobby-travel-fushimi.jpg" alt="伏見稲荷大社の鳥居の写真" />
+            <figcaption>Fushimi Inari</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/hobby-travel-korea.jpg" alt="旧38度線付近で撮影した写真" />
+            <figcaption>Former 38th parallel</figcaption>
+          </figure>
+        </div>
+        <div class="hobby-detail">
+          <p class="work-index">Hobby 03</p>
+          <h3 id="travel-title">旅行</h3>
+          <p>
+            国内旅行が好きで、特に寺社仏閣や伝統的な建造物を巡るのが好きです。
+            その土地の空気や歴史を感じられる場所に行くと、普段とは違う視点で景色を見られるところに惹かれます。
+          </p>
+          <p>
+            ちょっとした自慢として、北朝鮮を訪れたことがあります。
+            3枚目の写真は旧38度線付近で撮影したもので、今でも強く印象に残っている旅の一つです。
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="./script.js?v=travel-modal"></script>
   </body>
 </html>

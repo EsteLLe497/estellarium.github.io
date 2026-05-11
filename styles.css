@@ -466,6 +466,14 @@ main {
   object-position: center;
 }
 
+.travel-photo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.travel-photo-grid img {
+  min-height: 330px;
+}
+
 .hobby-detail {
   align-self: center;
 }
@@ -899,6 +907,10 @@ figcaption {
 
   .hobby-modal-panel,
   .hobby-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-photo-grid {
     grid-template-columns: 1fr;
   }
 
