@@ -467,11 +467,19 @@ main {
 }
 
 .travel-photo-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .travel-photo-grid img {
-  min-height: 330px;
+  min-height: 240px;
+}
+
+.travel-photo-grid figure:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.travel-photo-grid figure:nth-child(3) img {
+  min-height: 240px;
 }
 
 .hobby-detail {
