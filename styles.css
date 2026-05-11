@@ -627,7 +627,7 @@ main {
   gap: 0;
 }
 
-.character-copy div {
+.character-copy dl > div {
   display: grid;
   grid-template-columns: 110px 1fr;
   border-bottom: 1px solid var(--thin);
@@ -640,6 +640,48 @@ main {
 
 .character-copy dd {
   margin: 0;
+}
+
+.tools-row dd {
+  display: grid;
+  gap: 16px;
+}
+
+.tool-set {
+  display: grid;
+  gap: 8px;
+}
+
+.tool-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool-tags li {
+  border: 1px solid rgba(17, 17, 17, 0.24);
+  padding: 5px 10px 6px;
+  background: rgba(255, 255, 255, 0.42);
+  font-size: 0.86rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transition: transform 280ms ease, border-color 280ms ease, background 280ms ease;
+}
+
+.tool-tags li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(17, 17, 17, 0.52);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .gallery-grid {
@@ -867,7 +909,7 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  .character-copy div {
+  .character-copy dl > div {
     grid-template-columns: 1fr;
     gap: 6px;
   }
