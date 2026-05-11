@@ -26,6 +26,9 @@ body {
     var(--paper);
   background-size: 76px 76px;
   font-family: "Yu Mincho", "Hiragino Mincho ProN", "Times New Roman", serif;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 body.modal-open {
@@ -495,6 +498,8 @@ main {
 
 .hobby-detail p {
   line-height: 2;
+  max-width: 34em;
+  hanging-punctuation: allow-end;
 }
 
 .story {
@@ -647,6 +652,7 @@ main {
   color: #3f3f3f;
   font-size: 0.88rem;
   line-height: 1.85;
+  hanging-punctuation: allow-end;
 }
 
 .character-layout {
