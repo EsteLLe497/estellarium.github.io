@@ -442,6 +442,45 @@ main {
   margin: 0;
 }
 
+.hobby-modal-panel {
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+}
+
+.hobby-photo-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.62fr) minmax(260px, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.hobby-photo-grid figure {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100%;
+}
+
+.hobby-photo-grid img {
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hobby-detail {
+  align-self: center;
+}
+
+.hobby-detail h3 {
+  margin: 0 0 18px;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.hobby-detail p {
+  line-height: 2;
+}
+
 .story {
   width: min(980px, calc(100% - 36px));
 }
@@ -688,10 +727,23 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.hobby-card {
+  display: grid;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 figure {
   margin: 0;
 }
 
+.hobby-frame img,
 figure img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -699,11 +751,19 @@ figure img {
   transition: filter 420ms ease, transform 420ms ease;
 }
 
+.hobby-card:hover img,
+.hobby-card:focus-visible img,
 figure:hover img {
   filter: saturate(1.08) contrast(1.04);
   transform: translateY(-4px);
 }
 
+.hobby-card:focus-visible {
+  outline: 1px solid rgba(17, 17, 17, 0.7);
+  outline-offset: 5px;
+}
+
+.hobby-caption,
 figcaption {
   margin-top: 8px;
   color: var(--muted);
@@ -835,6 +895,15 @@ figcaption {
   .work-modal-panel {
     max-height: 90vh;
     padding: 18px;
+  }
+
+  .hobby-modal-panel,
+  .hobby-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-photo-grid img {
+    min-height: 260px;
   }
 
   .work-viewer {

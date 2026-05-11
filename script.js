@@ -19,6 +19,7 @@ const revealTargets = document.querySelectorAll([
   ".life-chart",
   ".character-portrait",
   ".character-copy",
+  ".hobby-card",
   ".gallery-grid figure",
   ".work-card",
   ".chart-points li",
@@ -74,6 +75,38 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 updateScrollMotion();
+
+const hobbyOpenButtons = document.querySelectorAll("[data-hobby-open]");
+const fishingModal = document.querySelector("#fishing-modal");
+
+if (fishingModal) {
+  const closeButtons = fishingModal.querySelectorAll("[data-hobby-close]");
+
+  const openFishingModal = () => {
+    fishingModal.classList.add("is-open");
+    fishingModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  };
+
+  const closeFishingModal = () => {
+    fishingModal.classList.remove("is-open");
+    fishingModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  };
+
+  for (const button of hobbyOpenButtons) {
+    button.addEventListener("click", openFishingModal);
+  }
+
+  for (const button of closeButtons) {
+    button.addEventListener("click", closeFishingModal);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (!fishingModal.classList.contains("is-open")) return;
+    if (event.key === "Escape") closeFishingModal();
+  });
+}
 
 const workOpenButtons = document.querySelectorAll("[data-work-open]");
 const workModal = document.querySelector("#gamma-modal");

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio Kinetic Site</title>
-    <link rel="stylesheet" href="./styles.css?v=tools-v1" />
+    <link rel="stylesheet" href="./styles.css?v=fishing-modal" />
   </head>
   <body>
     <nav class="global-nav" aria-label="サイト内ナビゲーション">
@@ -152,7 +152,10 @@
           <h2>HOBBY</h2>
         </header>
         <div class="gallery-grid">
-          <figure><img src="./assets/hobby-fishing.jpg" alt="釣りの写真" /><figcaption>釣り</figcaption></figure>
+          <button class="hobby-card" type="button" data-hobby-open="fishing">
+            <span class="hobby-frame"><img src="./assets/hobby-fishing.jpg" alt="釣りの写真" /></span>
+            <span class="hobby-caption">釣り</span>
+          </button>
           <figure><img src="./assets/hobby-nazotoki.jpg" alt="謎解きの写真" /><figcaption>謎解き</figcaption></figure>
           <figure><img src="./assets/hobby-travel.png" alt="旅行の写真" /><figcaption>旅行</figcaption></figure>
           <figure><img src="./assets/hobby-sports.png" alt="スポーツの写真" /><figcaption>スポーツ</figcaption></figure>
@@ -225,6 +228,34 @@
       </section>
     </div>
 
-    <script src="./script.js?v=tools-v1"></script>
+    <div class="work-modal" id="fishing-modal" aria-hidden="true">
+      <div class="work-modal-backdrop" data-hobby-close></div>
+      <section class="work-modal-panel hobby-modal-panel" role="dialog" aria-modal="true" aria-labelledby="fishing-title">
+        <button class="modal-close" type="button" data-hobby-close aria-label="閉じる">×</button>
+        <div class="hobby-photo-grid">
+          <figure>
+            <img src="./assets/hobby-fishing-childhood.jpg" alt="子どもの頃の船釣りの写真" />
+            <figcaption>Childhood memory</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/hobby-fishing-shonan.jpg" alt="湘南で堤防釣りをしている写真" />
+            <figcaption>Shonan fishing</figcaption>
+          </figure>
+        </div>
+        <div class="hobby-detail">
+          <p class="work-index">Hobby 01</p>
+          <h3 id="fishing-title">釣り</h3>
+          <p>
+            幼い頃から父と船釣りに出かけていたことが、釣りを好きになった原点です。
+            最近は地元・湘南で堤防釣りをすることが多く、海の様子を見ながら仕掛けや狙い方を考える時間を楽しんでいます。
+          </p>
+          <p>
+            小学3年生の頃には釣果が記事に掲載されたこともあり、今でも印象に残っている思い出の一つです。
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="./script.js?v=fishing-modal"></script>
   </body>
 </html>
