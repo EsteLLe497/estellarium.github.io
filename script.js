@@ -76,6 +76,31 @@ window.addEventListener("scroll", () => {
 
 updateScrollMotion();
 
+const characterCarousel = document.querySelector(".character-carousel");
+
+if (characterCarousel) {
+  // Character profile carousel. Keep this local so modal sliders stay independent.
+  const characterSlides = [...characterCarousel.querySelectorAll(".character-slide")];
+  const prevButton = characterCarousel.querySelector("[data-character-prev]");
+  const nextButton = characterCarousel.querySelector("[data-character-next]");
+  let currentCharacterSlide = 0;
+
+  const showCharacterSlide = (index) => {
+    currentCharacterSlide = (index + characterSlides.length) % characterSlides.length;
+    characterSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === currentCharacterSlide);
+    });
+  };
+
+  prevButton?.addEventListener("click", () => showCharacterSlide(currentCharacterSlide - 1));
+  nextButton?.addEventListener("click", () => showCharacterSlide(currentCharacterSlide + 1));
+
+  characterCarousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showCharacterSlide(currentCharacterSlide - 1);
+    if (event.key === "ArrowRight") showCharacterSlide(currentCharacterSlide + 1);
+  });
+}
+
 const hobbyOpenButtons = document.querySelectorAll("[data-hobby-open]");
 const hobbyModals = [...document.querySelectorAll("#fishing-modal, #travel-modal")];
 
