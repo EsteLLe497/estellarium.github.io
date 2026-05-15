@@ -683,29 +683,72 @@ main {
   font-size: 1.18rem;
 }
 
-.character-copy dl {
+.character-info {
   display: grid;
-  gap: 0;
+  grid-auto-columns: minmax(230px, 280px);
+  grid-auto-flow: column;
+  gap: 14px;
+  padding: 0 0 14px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 2px;
+  scroll-snap-type: x mandatory;
 }
 
-.character-copy dl > div {
+.character-info::-webkit-scrollbar {
+  height: 7px;
+}
+
+.character-info::-webkit-scrollbar-track {
+  background: rgba(17, 17, 17, 0.08);
+}
+
+.character-info::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.28);
+}
+
+.info-card {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  border-bottom: 1px solid var(--thin);
-  padding: 16px 0;
+  align-content: start;
+  gap: 12px;
+  min-height: 178px;
+  padding: 18px;
+  border: 1px solid var(--thin);
+  background: rgba(255, 255, 255, 0.34);
+  scroll-snap-align: start;
 }
 
-.character-copy dt {
-  color: var(--muted);
+.info-card-wide {
+  grid-column: span 2;
+  grid-auto-rows: max-content;
 }
 
-.character-copy dd {
+.info-card p {
   margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
 }
 
-.tools-row dd {
+.info-card h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.info-list {
   display: grid;
-  gap: 16px;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.7;
+}
+
+.info-list li {
+  padding-left: 14px;
+  border-left: 1px solid rgba(17, 17, 17, 0.28);
 }
 
 .tool-set {
@@ -1004,8 +1047,11 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  .character-copy dl > div {
-    grid-template-columns: 1fr;
-    gap: 6px;
+  .character-info {
+    grid-auto-columns: minmax(225px, 84%);
+  }
+
+  .info-card-wide {
+    grid-column: span 1;
   }
 }
